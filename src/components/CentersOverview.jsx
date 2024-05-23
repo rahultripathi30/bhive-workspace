@@ -2,12 +2,20 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Grid, Card, CardContent, CardMedia, Typography } from '@mui/material';
 
+const importImage = (imagePath) => {
+  try {
+    return require(`../${imagePath}`);
+  } catch (err) {
+    console.error(`Error loading image: ${imagePath}`, err);
+    return null;
+  }
+};
+
 const CentersOverview = () => {
   const { centers, status } = useSelector((state) => state.centers);
 
   if (status === 'loading') return <div>Loading...</div>;
   if (status === 'failed') return <div>Error loading centers.</div>;
-  const image = 'src/static_assets/0a74575ca6004b4bb20dcd131afc5849.jpg'
 
   return (
     <Grid container spacing={2}>
@@ -18,7 +26,7 @@ const CentersOverview = () => {
               <CardMedia
                 component="img"
                 height="140"
-                image={image}
+                image={importImage(center.images[0])}
                 alt={center.name}
               />
             )}
