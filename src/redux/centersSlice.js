@@ -1,10 +1,8 @@
-// src/redux/centersSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchCenters = createAsyncThunk('centers/fetchCenters', async () => {
-  const response = await axios.get('https://github.com/MujtabaKably/bhive-interview-project-data/blob/main/data.json');
-  //const response = await axios.get('/api/data');
+  const response = await axios.get('https://raw.githubusercontent.com/MujtabaKably/bhive-interview-project-data/main/data.json');
   return response.data;
 });
 
