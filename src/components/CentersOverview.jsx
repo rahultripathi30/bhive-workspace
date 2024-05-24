@@ -1,16 +1,18 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Grid, Card, CardContent, CardMedia, Typography, Box } from '@mui/material';
+import { LocationOn } from '@mui/icons-material';
+import mapImage from '../static_assets/mapImage.png';
 import { styled } from '@mui/system';
 
 // Haversine formula to calculate distance between two coordinates
 const haversineDistance = (lat1, lon1, lat2, lon2) => {
   const toRad = (x) => (x * Math.PI) / 180;
-  
+
   const R = 6371; // Radius of the Earth in kilometers
   const dLat = toRad(lat2 - lat1);
   const dLon = toRad(lon2 - lon1);
-  const a = 
+  const a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
     Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
     Math.sin(dLon / 2) * Math.sin(dLon / 2);
@@ -28,21 +30,26 @@ const importImage = (imagePath) => {
   }
 };
 
-const CardHeaderLeft = styled(Box)({
-  position: 'relative',
-  top: '-24px',
-  left: '0px',
+const CardHeader = styled(Box)({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  padding: '4px 8px',
   backgroundColor: 'white',
   color: 'black',
+  position: 'relative',
+  top: '-24px',
+  zIndex: 1,
 });
 
-const CardHeaderRight = styled(Box)({
-  position: 'relative',
-  top: '-24px',
-  right: '0px',
-  backgroundColor: 'white',
-  color: 'black',
-
+const DistanceBox = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  backgroundColor: 'grey',
+  padding: '4px',
+  borderRadius: '4px',
+  color: 'white',
 });
 
 const DiscountBadge = styled(Box)({
@@ -73,13 +80,13 @@ const CentersOverview = () => {
         return (
           <Grid item xs={12} sm={6} md={4} key={center.id}>
             <Box sx={{ position: 'relative', paddingTop: '40px' }}>
-              <CardHeaderLeft>
+              <CardHeader>
                 <Typography variant="body2">{center.name}</Typography>
-              </CardHeaderLeft>
-              <CardHeaderRight>
-                <image ></image>
-                <Typography variant="body2">{distance} Kms</Typography>
-              </CardHeaderRight>
+                <DistanceBox>
+                  <mapImage/>
+                  <Typography variant="body2">{distance} Kms</Typography>
+                </DistanceBox>
+              </CardHeader>
               <Card sx={{ position: 'relative' }}>
                 {center.images && center.images.length > 0 && (
                   <Box sx={{ position: 'relative' }}>
