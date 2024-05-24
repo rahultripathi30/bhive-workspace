@@ -1,8 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Grid, Card, CardContent, CardMedia, Typography, Box } from '@mui/material';
-import { LocationOn } from '@mui/icons-material';
-import mapImage from '../static_assets/mapImage.png';
 import { styled } from '@mui/system';
 
 // Haversine formula to calculate distance between two coordinates
