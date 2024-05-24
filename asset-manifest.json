@@ -1,10 +1,18 @@
 {
   "files": {
-    "main.js": "/rahultripathi30/bhive-workspace/static/js/main.973d21d7.js",
+    "main.css": "/rahultripathi30/bhive-workspace/static/css/main.1a7488ce.css",
+    "main.js": "/rahultripathi30/bhive-workspace/static/js/main.0cb14b34.js",
+    "static/js/453.afc5842c.chunk.js": "/rahultripathi30/bhive-workspace/static/js/453.afc5842c.chunk.js",
+    "static/media/jpg": "/rahultripathi30/bhive-workspace/static/media/4d85410baa074351aa948fc2c5da50d9.64f087be5245f4560f1e.jpg",
+    "static/media/index.cjs": "/rahultripathi30/bhive-workspace/static/media/index.671993152dc0f6e0b17a.cjs",
+    "static/media/logo.svg": "/rahultripathi30/bhive-workspace/static/media/logo.6ce24c58023cc2f8fd88.svg",
     "index.html": "/rahultripathi30/bhive-workspace/index.html",
-    "main.973d21d7.js.map": "/rahultripathi30/bhive-workspace/static/js/main.973d21d7.js.map"
+    "main.1a7488ce.css.map": "/rahultripathi30/bhive-workspace/static/css/main.1a7488ce.css.map",
+    "main.0cb14b34.js.map": "/rahultripathi30/bhive-workspace/static/js/main.0cb14b34.js.map",
+    "453.afc5842c.chunk.js.map": "/rahultripathi30/bhive-workspace/static/js/453.afc5842c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.973d21d7.js"
+    "static/css/main.1a7488ce.css",
+    "static/js/main.0cb14b34.js"
   ]
 }
